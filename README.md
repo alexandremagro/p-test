@@ -7,6 +7,14 @@
 
 ### Installation
 
+Configure local environment, creating a `.env` file in root and set local
+PostgreSQL credentials. Example:
+
+```
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=password
+```
+
 Install dependencies:
 
 ```
