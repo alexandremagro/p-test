@@ -1,24 +1,39 @@
-# README
+# P-test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Prerequisites
 
-Things you may want to cover:
+- Ruby 2.7.0
+- PostgreSQL
 
-* Ruby version
+### Installation
 
-* System dependencies
+Install dependencies:
 
-* Configuration
+```
+bundle && yarn
+```
 
-* Database creation
+Initialize local databases:
 
-* Database initialization
+```
+rails db:create db:migrate
+```
 
-* How to run the test suite
+## Development
 
-* Services (job queues, cache servers, search engines, etc.)
+Running locally:
 
-* Deployment instructions
+```
+rails s
+```
 
-* ...
+Running tests:
+
+```
+rails test
+rails test:system
+```
+
+## Authors
+
+Alexandre Magro (alx.magro@gmail.com)
