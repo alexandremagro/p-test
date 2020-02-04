@@ -25,15 +25,15 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not create order without an user' do
+    order = {
+      phone_model: 'iPhone 11',
+      phone_imei: ('0' * 14) + '1',
+      installment_amount: 1000.0,
+      number_of_installments: 6
+    }
+
     assert_no_difference 'Order.count' do
-      post api_orders_path, params: {
-        order: {
-          phone_model: 'iPhone 11',
-          phone_imei: ('0' * 14) + '1',
-          installment_amount: 1000.0,
-          number_of_installments: 6
-        }
-      }
+      post api_orders_path, params: { order: order }
 
       assert_response :unprocessable_entity
       assert_includes @response.parsed_body['user'], 'must exist'
@@ -41,20 +41,20 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not create order with wrong user' do
-    assert_no_difference 'Order.count' do
-      post api_orders_path, params: {
-        order: {
-          phone_model: 'iPhone 11',
-          phone_imei: ('0' * 14) + '1',
-          installment_amount: 1000.0,
-          number_of_installments: 6,
-          user_attributes: {
-            name: nil,
-            email: nil,
-            cpf: nil
-          }
-        }
+    order = {
+      phone_model: 'iPhone 11',
+      phone_imei: ('0' * 14) + '1',
+      installment_amount: 1000.0,
+      number_of_installments: 6,
+      user_attributes: {
+        name: nil,
+        email: nil,
+        cpf: nil
       }
+    }
+
+    assert_no_difference 'Order.count' do
+      post api_orders_path, params: { order: order }
 
       assert_response :unprocessable_entity
       assert_includes @response.parsed_body['user.name'], "can't be blank"
