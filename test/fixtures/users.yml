@@ -1,0 +1,6 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+luke:
+  name: Luke
+  cpf: 00000000000
+  email: luke@rebels.com
