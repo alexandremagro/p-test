@@ -1,0 +1,22 @@
+<div class="col-4 mb-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title"><%= order.phone_imei %></h5>
+      <p class="card-text">
+        <dl class="mb-0">
+          <dt>Modelo</dt>
+          <dd><%= order.phone_model %></dd>
+
+          <dt>Plano</dt>
+          <dd class="mb-0">
+            <%= order.number_of_installments %>x de R$ <%= order.installment_amount %>
+          </dd>
+        </dl>
+    </div>
+    <div class="card-footer text-muted">
+      <strong><%= order.user_name %></strong><br/>
+      <%= order.user_email %><br/>
+      CPF: <%= order.user_cpf %>
+    </div>
+  </div>
+</div>

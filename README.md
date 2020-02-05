@@ -35,12 +35,20 @@ Running locally:
 rails s
 ```
 
+Running code reviews:
+
+```
+yarn lint
+rubocop
+```
+
 Running tests:
 
 ```
 rails test
 rails test:system
 ```
+
 
 ## Authors
 

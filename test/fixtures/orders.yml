@@ -1,8 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  phone_model: iPhone 11
-  phone_imei: <%= '0' * 15 %>
+luke_order:
+  phone_model: Xiaomi Mi 1024 SE
+  phone_imei: 000
   installment_amount: 1000
   number_of_installments: 6
   user: luke
+
+leia_order:
+  phone_model: iPhone 230
+  phone_imei: 001
+  installment_amount: 1000
+  number_of_installments: 12
+  user: leia

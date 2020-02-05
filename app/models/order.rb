@@ -7,4 +7,6 @@ class Order < ApplicationRecord
   validates :number_of_installments, presence: true
 
   accepts_nested_attributes_for :user
+
+  delegate :name, :cpf, :email, to: :user, prefix: true
 end
