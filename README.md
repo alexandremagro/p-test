@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-- Ruby 2.7.0
+- Ruby 2.6.5
 - PostgreSQL
 
 ### Installation
