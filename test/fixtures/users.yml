@@ -4,3 +4,8 @@ luke:
   name: Luke
   cpf: 00000000000
   email: luke@rebels.com
+
+leia:
+  name: Leia
+  cpf: 00000000001
+  email: leia@rebels.com
