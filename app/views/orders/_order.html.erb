@@ -4,12 +4,18 @@
       <h5 class="card-title"><%= order.phone_imei %></h5>
       <p class="card-text">
         <dl class="mb-0">
-          <dt>Modelo</dt>
+          <dt>Model</dt>
           <dd><%= order.phone_model %></dd>
 
-          <dt>Plano</dt>
+          <dt>Installments</dt>
           <dd class="mb-0">
-            <%= order.number_of_installments %>x de R$ <%= order.installment_amount %>
+            <%= order.number_of_installments %>x of
+            <%= number_to_currency(
+              order.installment_amount,
+              unit: 'R$',
+              separator: ',',
+              delimiter: '.'
+            ) %>
           </dd>
         </dl>
     </div>

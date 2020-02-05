@@ -1,0 +1,30 @@
+<%= simple_form_for [:api, order],
+    remote: true,
+    html: { 'data-model' => 'order', 'data-redirect' => '/' } do |f| %>
+
+  <div class="row">
+    <fieldset class="col">
+      <legend>User</legend>
+      <%= f.simple_fields_for :user do |u| %>
+      <%= u.input :cpf %>
+      <%= u.input :email %>
+      <%= u.input :name %>
+      <% end %>
+    </fieldset>
+
+    <fieldset class="col">
+      <legend>Order</legend>
+
+      <%= f.input :phone_model %>
+      <%= f.input :phone_imei %>
+      <%= f.input :installment_amount %>
+      <%= f.input :number_of_installments %>
+    </fieldset>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <%= f.button :submit, class: 'btn-primary shadow' %>
+    </div>
+  </div>
+<% end %>
